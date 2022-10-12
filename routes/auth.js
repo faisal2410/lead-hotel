@@ -1,0 +1,17 @@
+const express =require("express");
+
+const router = express.Router();
+
+// controllers
+const { register, login } =require("../controllers/auth");
+
+router.post("/register", register);
+router.post("/login", login);
+router.get("/",(req,res)=>{
+    res.status(200).json({
+        status:"Success",
+        message:"Welcome to Lead Hotel"
+    })
+})
+
+module.exports = router;
